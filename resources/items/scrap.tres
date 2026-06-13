@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d1ayfnrtk4nlj"]
+
+[ext_resource type="Script" uid="uid://sxljbljs3vt6" path="res://inventory/item_data.gd" id="1_encbw"]
+[ext_resource type="Texture2D" uid="uid://v4ff6qiw6k3r" path="res://resources/icons/icon.svg" id="1_ngoft"]
+[ext_resource type="PackedScene" uid="uid://bh4bdcbwj33xp" path="res://scenes/world/pickups/pickup_item.tscn" id="2_v5ic6"]
+
+[resource]
+script = ExtResource("1_encbw")
+item_id = "scrap"
+category = 1
+item_name = "Scrap"
+rarity = 3
+value = 6
+weight = 4.0
+max_stack = 6
+icon = ExtResource("1_ngoft")
+description = "Most common trash found on planet"
+pickup_scene = ExtResource("2_v5ic6")
+metadata/_custom_type_script = "uid://sxljbljs3vt6"

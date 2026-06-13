@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://bu0q7suce8h0e"]
+
+[ext_resource type="Material" uid="uid://c8w72emum2hmy" path="res://resources/materials/grey.tres" id="1_h8xpu"]
+[ext_resource type="PackedScene" uid="uid://duth1qamwv8fh" path="res://scenes/player/player.tscn" id="2_42xv1"]
+[ext_resource type="PackedScene" uid="uid://bh4bdcbwj33xp" path="res://scenes/world/pickups/pickup_item.tscn" id="3_trr8d"]
+[ext_resource type="Resource" uid="uid://d1ayfnrtk4nlj" path="res://resources/items/scrap.tres" id="4_w4hmw"]
+[ext_resource type="PackedScene" uid="uid://bei50p35wmliy" path="res://scenes/ui/canvas_layer.tscn" id="5_gup2j"]
+[ext_resource type="PackedScene" uid="uid://dsq0y3l1t5h85" path="res://systems/extraction/deploy_terminal.tscn" id="6_2cfme"]
+[ext_resource type="PackedScene" uid="uid://djq0pd3blqg4s" path="res://scenes/ui/loading_screen.tscn" id="7_lmm07"]
+[ext_resource type="PackedScene" uid="uid://bhrfckarog04w" path="res://scenes/world/pickups/Cable.tscn" id="8_uwpuk"]
+[ext_resource type="Resource" uid="uid://cdnvfb7n2w0su" path="res://resources/items/cable.tres" id="9_ytavf"]
+[ext_resource type="PackedScene" uid="uid://b0gx7wux504v2" path="res://debug_dummy.tscn" id="10_6q3i5"]
+[ext_resource type="PackedScene" uid="uid://dd2lqtbssn0bf" path="res://systems/ai/enemy.tscn" id="11_nivne"]
+[ext_resource type="PackedScene" uid="uid://cqugayygg3rgq" path="res://scenes/world/vendors/vendor_npc.tscn" id="12_d27pc"]
+[ext_resource type="PackedScene" uid="uid://bw554s4twui4w" path="res://Enviroment/Tree_1.tscn" id="13_42xv1"]
+[ext_resource type="PackedScene" uid="uid://fos0w1c5c7wi" path="res://scenes/world/pickups/Battery.tscn" id="14_trr8d"]
+[ext_resource type="Resource" uid="uid://ctf67p6tbthjo" path="res://resources/items/battery.tres" id="15_w4hmw"]
+[ext_resource type="PackedScene" uid="uid://b78g57aa0dbdu" path="res://loot_container.tscn" id="16_gup2j"]
+[ext_resource type="Resource" uid="uid://3xv41c03ntfd" path="res://industrial_loot_table.tres" id="17_2cfme"]
+[ext_resource type="PackedScene" uid="uid://wtcyqgi557ji" path="res://Import/Crystal.glb" id="18_lmm07"]
+[ext_resource type="PackedScene" uid="uid://c21qok3gdskud" path="res://Import/Fastener Bundle.glb" id="19_uwpuk"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_trr8d"]
+rayleigh_coefficient = 1.4
+mie_coefficient = 0.02
+sun_disk_scale = 4.0
+ground_color = Color(0.24705882, 0.3019608, 0.23529412, 1)
+
+[sub_resource type="Sky" id="Sky_w4hmw"]
+sky_material = SubResource("PhysicalSkyMaterial_trr8d")
+
+[sub_resource type="Environment" id="Environment_gup2j"]
+background_mode = 2
+sky = SubResource("Sky_w4hmw")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.75
+ambient_light_energy = 1.05
+tonemap_mode = 3
+tonemap_exposure = 0.82
+tonemap_white = 6.0
+ssao_enabled = true
+ssao_radius = 1.2
+ssao_intensity = 1.1
+ssil_enabled = true
+ssil_radius = 3.0
+ssil_intensity = 1.3
+sdfgi_enabled = true
+sdfgi_energy = 1.4
+glow_enabled = true
+glow_intensity = 0.03
+glow_bloom = 0.08
+glow_blend_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.5529412, 0.59607846, 0.56078434, 1)
+fog_density = 0.012
+fog_aerial_perspective = 1.0
+fog_height_density = 0.12
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyfs4"]
+albedo_color = Color(0.07923944, 0.52734375, 0.046429068, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3jxj"]
+albedo_color = Color(0.45703125, 0.22581992, 0.06401044, 1)
+
+[node name="MainScene" type="Node3D" unique_id=454836209]
+
+[node name="Node" type="Node" parent="." unique_id=233219702]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node" unique_id=1358009757]
+environment = SubResource("Environment_gup2j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node" unique_id=249163049]
+transform = Transform3D(0.9396926, -0.24184477, 0.24184473, 0, 0.7071068, 0.7071067, -0.34202012, -0.66446304, 0.6644629, 0, 0, 0)
+light_color = Color(0.9098039, 0.8627451, 0.7647059, 1)
+light_energy = 1.35
+light_indirect_energy = 1.25
+light_volumetric_fog_energy = 1.5
+shadow_enabled = true
+shadow_bias = 0.04
+shadow_normal_bias = 1.0
+shadow_blur = 1.4
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=412666017]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0.5)
+use_collision = true
+size = Vector3(43, 1, 21)
+material = SubResource("StandardMaterial3D_gyfs4")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=919282375]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21, -0.008728027, 12)
+use_collision = true
+size = Vector3(20, 0.001, 21)
+material = SubResource("StandardMaterial3D_gyfs4")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1677697493]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15, 3, 41.715332)
+use_collision = true
+size = Vector3(18.569336, 1, 21)
+material = SubResource("StandardMaterial3D_gyfs4")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=1280110919]
+transform = Transform3D(-4.371139e-08, 0, -1, 0.25881904, 0.9659258, -1.131334e-08, 0.9659258, -0.25881904, -4.222196e-08, 15, 0.9801431, 24.925894)
+use_collision = true
+size = Vector3(15.846558, 1, 21)
+material = SubResource("StandardMaterial3D_gyfs4")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1184446875]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.000001, 5, -12.5)
+use_collision = true
+size = Vector3(17, 11, 1)
+material = ExtResource("1_h8xpu")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1445592112]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10, 3, 0.49999955)
+material_override = ExtResource("1_h8xpu")
+use_collision = true
+size = Vector3(43, 5, 1)
+material = SubResource("StandardMaterial3D_o3jxj")
+
+[node name="Player" parent="." unique_id=1444998611 instance=ExtResource("2_42xv1")]
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 2, 1.735832, 6)
+bob_frequency = 1.0
+bob_amplitude = 0.1
+
+[node name="PickupItem11" parent="." unique_id=936614724 instance=ExtResource("3_trr8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 10)
+item_data = ExtResource("4_w4hmw")
+amount = 4
+
+[node name="CanvasLayer" parent="." unique_id=511105077 instance=ExtResource("5_gup2j")]
+
+[node name="DeployTerminal" parent="." unique_id=1654167379 instance=ExtResource("6_2cfme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, 4)
+
+[node name="LoadingScreen" parent="." unique_id=710103075 instance=ExtResource("7_lmm07")]
+
+[node name="PickupItem26" parent="." unique_id=1583410229 instance=ExtResource("8_uwpuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 14)
+item_data = ExtResource("9_ytavf")
+
+[node name="PickupItem12" parent="." unique_id=1767854442 instance=ExtResource("3_trr8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 12)
+item_data = ExtResource("4_w4hmw")
+amount = 4
+
+[node name="PickupItem13" parent="." unique_id=2120456143 instance=ExtResource("3_trr8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 6)
+item_data = ExtResource("4_w4hmw")
+amount = 4
+
+[node name="PickupItem14" parent="." unique_id=1494530297 instance=ExtResource("3_trr8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 8)
+item_data = ExtResource("4_w4hmw")
+amount = 4
+
+[node name="PickupItem15" parent="." unique_id=1266435622 instance=ExtResource("3_trr8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 9)
+item_data = ExtResource("4_w4hmw")
+amount = 4
+
+[node name="PickupItem16" parent="." unique_id=90582124 instance=ExtResource("3_trr8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 11)
+item_data = ExtResource("4_w4hmw")
+amount = 4
+
+[node name="PickupItem17" parent="." unique_id=106873637 instance=ExtResource("3_trr8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 5)
+item_data = ExtResource("4_w4hmw")
+amount = 4
+
+[node name="PickupItem18" parent="." unique_id=167296701 instance=ExtResource("3_trr8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 7)
+item_data = ExtResource("4_w4hmw")
+amount = 4
+
+[node name="PickupItem27" parent="." unique_id=403633666 instance=ExtResource("8_uwpuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 17)
+item_data = ExtResource("9_ytavf")
+
+[node name="PickupItem28" parent="." unique_id=1697299512 instance=ExtResource("8_uwpuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 15)
+item_data = ExtResource("9_ytavf")
+
+[node name="PickupItem29" parent="." unique_id=1186832052 instance=ExtResource("8_uwpuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 18)
+item_data = ExtResource("9_ytavf")
+
+[node name="PickupItem30" parent="." unique_id=1431963188 instance=ExtResource("8_uwpuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 16)
+item_data = ExtResource("9_ytavf")
+
+[node name="PickupItem31" parent="." unique_id=1186950252 instance=ExtResource("8_uwpuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 19)
+item_data = ExtResource("9_ytavf")
+
+[node name="DebugDummy" parent="." unique_id=1166081473 instance=ExtResource("10_6q3i5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5209, -1)
+
+[node name="Enemy" parent="." unique_id=2089865123 instance=ExtResource("11_nivne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.6507753, 7)
+
+[node name="Enemy2" parent="." unique_id=1689114513 instance=ExtResource("11_nivne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 12)
+
+[node name="StaticBody3D" parent="." unique_id=1907143842 instance=ExtResource("12_d27pc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+
+[node name="StaticBody3D2" parent="." unique_id=1715031317 instance=ExtResource("13_42xv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.783629, 0.56267095, 18.87849)
+
+[node name="PickupItem" parent="." unique_id=387408872 instance=ExtResource("14_trr8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5795566, 2)
+item_data = ExtResource("15_w4hmw")
+
+[node name="LootContainer" parent="." unique_id=83388434 instance=ExtResource("16_gup2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -8)
+loot_table = ExtResource("17_2cfme")
+
+[node name="LootContainer2" parent="." unique_id=1413567871 instance=ExtResource("16_gup2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 0)
+loot_table = ExtResource("17_2cfme")
+loot_count_min = 5
+loot_count_max = 8
+
+[node name="Crystal" parent="." unique_id=1726812650 instance=ExtResource("18_lmm07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1)
+
+[node name="Fastener Bundle" parent="." unique_id=1005731955 instance=ExtResource("19_uwpuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.50593305, 10)

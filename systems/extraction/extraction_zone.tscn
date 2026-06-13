@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://crsm03itc77pp"]
+
+[ext_resource type="Script" uid="uid://857l1btubd6i" path="res://systems/extraction/extraction_zone.gd" id="1_jvpjx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37mcl"]
+size = Vector3(3, 2, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_asekw"]
+
+[node name="ExtractionZone" type="Area3D" unique_id=653092586]
+script = ExtResource("1_jvpjx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=614335385]
+shape = SubResource("BoxShape3D_37mcl")
+debug_color = Color(0, 0.6, 0.69803923, 0.627451)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1321361198]
+transform = Transform3D(2.6999998, 0, 0, 0, 0.21000001, 0, 0, 0, 2.5919998, 0, -0.075336576, 0)
+mesh = SubResource("BoxMesh_asekw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

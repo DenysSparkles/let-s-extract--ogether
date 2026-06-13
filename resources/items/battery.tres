@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ctf67p6tbthjo"]
+
+[ext_resource type="Script" uid="uid://sxljbljs3vt6" path="res://inventory/item_data.gd" id="1_enf20"]
+[ext_resource type="Texture2D" uid="uid://bh84bo3j0qt17" path="res://resources/icons/openclipart-vectors-lead-accumulator-149612_1920.png" id="1_fewb3"]
+[ext_resource type="PackedScene" uid="uid://fos0w1c5c7wi" path="res://scenes/world/pickups/Battery.tscn" id="2_energ"]
+
+[resource]
+script = ExtResource("1_enf20")
+item_id = "battery"
+category = 3
+item_name = "Battery"
+rarity = 1
+value = 20
+weight = 5.0
+max_stack = 4
+icon = ExtResource("1_fewb3")
+description = "Just battery from old car."
+pickup_scene = ExtResource("2_energ")
+metadata/_custom_type_script = "uid://sxljbljs3vt6"

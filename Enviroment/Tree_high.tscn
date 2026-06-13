@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bk5u2kshfraie"]
+
+[ext_resource type="PackedScene" uid="uid://c7lo2jbjv36wm" path="res://Import/Tree_High_collision.glb" id="1_i0ujh"]
+
+[node name="Node3D" type="Node3D" unique_id=568385747]
+
+[node name="Tree_High_collision" parent="." unique_id=1181116527 instance=ExtResource("1_i0ujh")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

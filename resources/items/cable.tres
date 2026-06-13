@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cdnvfb7n2w0su"]
+
+[ext_resource type="Texture2D" uid="uid://pquk1e6orayk" path="res://resources/icons/Dot.png" id="1_icpkp"]
+[ext_resource type="PackedScene" uid="uid://bhrfckarog04w" path="res://scenes/world/pickups/Cable.tscn" id="2_8xqv8"]
+[ext_resource type="Script" uid="uid://sxljbljs3vt6" path="res://inventory/item_data.gd" id="2_x238g"]
+
+[resource]
+script = ExtResource("2_x238g")
+item_id = "electronic"
+category = 3
+item_name = "Cable"
+rarity = 2
+value = 12
+max_stack = 3
+icon = ExtResource("1_icpkp")
+description = "Used for electrical needs and repair stations"
+pickup_scene = ExtResource("2_8xqv8")
+metadata/_custom_type_script = "uid://sxljbljs3vt6"

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="LootTable" format=3 uid="uid://3xv41c03ntfd"]
+
+[ext_resource type="Script" uid="uid://dnme6grxuoimy" path="res://scripts/resources/loot_entry.gd" id="1_sfn5f"]
+[ext_resource type="Script" uid="uid://4xjyqhmh4wtl" path="res://scripts/resources/loot_table.gd" id="2_iabtl"]
+[ext_resource type="Resource" uid="uid://d1ayfnrtk4nlj" path="res://resources/items/scrap.tres" id="2_x4avx"]
+[ext_resource type="Resource" uid="uid://cdnvfb7n2w0su" path="res://resources/items/cable.tres" id="3_wqbiq"]
+[ext_resource type="Resource" uid="uid://ctf67p6tbthjo" path="res://resources/items/battery.tres" id="4_lb7uj"]
+
+[sub_resource type="Resource" id="Resource_e6ueb"]
+script = ExtResource("1_sfn5f")
+item = ExtResource("2_x4avx")
+max_amount = 5
+metadata/_custom_type_script = "uid://dnme6grxuoimy"
+
+[sub_resource type="Resource" id="Resource_wr2rb"]
+script = ExtResource("1_sfn5f")
+item = ExtResource("3_wqbiq")
+weight = 50
+max_amount = 2
+metadata/_custom_type_script = "uid://dnme6grxuoimy"
+
+[sub_resource type="Resource" id="Resource_5g7dv"]
+script = ExtResource("1_sfn5f")
+item = ExtResource("4_lb7uj")
+weight = 20
+metadata/_custom_type_script = "uid://dnme6grxuoimy"
+
+[resource]
+script = ExtResource("2_iabtl")
+entries = Array[ExtResource("1_sfn5f")]([SubResource("Resource_e6ueb"), SubResource("Resource_wr2rb"), SubResource("Resource_5g7dv")])
+metadata/_custom_type_script = "uid://4xjyqhmh4wtl"

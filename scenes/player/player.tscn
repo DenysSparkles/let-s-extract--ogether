@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://duth1qamwv8fh"]
+
+[ext_resource type="Script" uid="uid://kkao6ddtq7ou" path="res://scenes/player/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://cj2msw72nf5op" path="res://systems/combat/weapon.gd" id="2_hqtel"]
+[ext_resource type="Script" uid="uid://cr6oa50y0a8iu" path="res://systems/interaction/interaction_component.gd" id="2_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1444998611 groups=["player"]]
+script = ExtResource("1_4flbx")
+bob_frequency = 2.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=897667326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_sh265")
+
+[node name="Head" type="Node3D" parent="." unique_id=828844226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="PitchPivot" type="Node3D" parent="Head" unique_id=1358145708]
+
+[node name="CameraBob" type="Node3D" parent="Head/PitchPivot" unique_id=354311727]
+
+[node name="Camera3D" type="Camera3D" parent="Head/PitchPivot/CameraBob" unique_id=1795736724]
+physics_interpolation_mode = 1
+
+[node name="InteractionRay" type="RayCast3D" parent="Head/PitchPivot/CameraBob/Camera3D" unique_id=1221749863]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.026561141, 0)
+target_position = Vector3(0, -3, 0)
+
+[node name="Weapon" type="Node3D" parent="Head/PitchPivot/CameraBob/Camera3D" unique_id=2069730654]
+script = ExtResource("2_hqtel")
+
+[node name="InteractionComponent" type="Node" parent="." unique_id=190357143 node_paths=PackedStringArray("interaction_ray")]
+script = ExtResource("2_onrkg")
+interaction_ray = NodePath("../Head/PitchPivot/CameraBob/Camera3D/InteractionRay")

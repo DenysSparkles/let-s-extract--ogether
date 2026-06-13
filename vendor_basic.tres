@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VendorData" format=3 uid="uid://dn1ei0y3vrxlo"]
+
+[ext_resource type="Script" uid="uid://sxljbljs3vt6" path="res://inventory/item_data.gd" id="1_g7b8t"]
+[ext_resource type="Resource" uid="uid://cdnvfb7n2w0su" path="res://resources/items/cable.tres" id="2_0webf"]
+[ext_resource type="Resource" uid="uid://d1ayfnrtk4nlj" path="res://resources/items/scrap.tres" id="3_3dqdj"]
+[ext_resource type="Script" uid="uid://4sip3tl6vadq" path="res://VendorData.gd" id="3_vq5ev"]
+[ext_resource type="Resource" uid="uid://ctf67p6tbthjo" path="res://resources/items/battery.tres" id="4_a4o57"]
+
+[resource]
+script = ExtResource("3_vq5ev")
+items = Array[ExtResource("1_g7b8t")]([ExtResource("2_0webf"), ExtResource("3_3dqdj"), ExtResource("4_a4o57")])
+metadata/_custom_type_script = "uid://4sip3tl6vadq"

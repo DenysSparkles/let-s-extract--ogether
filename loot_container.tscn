@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b78g57aa0dbdu"]
+
+[ext_resource type="Script" uid="uid://bgh5g4m30udxr" path="res://loot_container.gd" id="1_7oiqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7oiqx"]
+size = Vector3(4, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dcl2w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_egm2g"]
+
+[node name="LootContainer" type="StaticBody3D" unique_id=83388434]
+script = ExtResource("1_7oiqx")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=448771149]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2017613054]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_7oiqx")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1475545669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.4, 0, 0, 0)
+mesh = SubResource("BoxMesh_dcl2w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=57788992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.4, 0, 0, 0)
+shape = SubResource("BoxShape3D_egm2g")

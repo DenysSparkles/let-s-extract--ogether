@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dd2lqtbssn0bf"]
+
+[ext_resource type="Script" uid="uid://br2r6ege2efyv" path="res://systems/ai/enemy.gd" id="1_4gyqm"]
+[ext_resource type="PackedScene" uid="uid://bhrfckarog04w" path="res://scenes/world/pickups/Cable.tscn" id="2_qi2p4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iifgy"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_epg4t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3yqyl"]
+height = 2.2600098
+radius = 6.0
+
+[node name="Enemy" type="CharacterBody3D" unique_id=2089865123 groups=["enemy"]]
+script = ExtResource("1_4gyqm")
+loot_scene = ExtResource("2_qi2p4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=920177388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8851571, 0)
+shape = SubResource("CapsuleShape3D_iifgy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=604613162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CapsuleMesh_epg4t")
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=531629167]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1581801242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8699951, 0)
+shape = SubResource("CylinderShape3D_3yqyl")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2025068733]
+path_desired_distance = 0.5
+target_desired_distance = 1.5
+path_height_offset = 2.0
+path_return_max_radius = 0.4
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

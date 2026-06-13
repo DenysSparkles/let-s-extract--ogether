@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dnagioiuky850"]
+
+[ext_resource type="Script" uid="uid://dkyceisajig2k" path="res://scenes/ui/notifications/notification_item.gd" id="1_m5x1j"]
+
+[node name="NotificationItem" type="Label" unique_id=1190157827]
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 2
+autowrap_mode = 3
+script = ExtResource("1_m5x1j")

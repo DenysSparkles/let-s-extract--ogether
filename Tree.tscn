@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://s7mpuexpepf"]
+
+[ext_resource type="PackedScene" uid="uid://c4cna722oewyt" path="res://Import/Tree01.glb" id="1_nbyt5"]
+
+[node name="Node3D" type="Node3D" unique_id=1951283300]
+
+[node name="Tree01" parent="." unique_id=1953871788 instance=ExtResource("1_nbyt5")]

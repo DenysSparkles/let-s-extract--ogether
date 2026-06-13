@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dsq0y3l1t5h85"]
+
+[ext_resource type="Script" uid="uid://c2usv10d6g3fv" path="res://systems/extraction/deploy_terminal.gd" id="1_npjsr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s7md7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s7md7"]
+
+[node name="DeployTerminal" type="StaticBody3D" unique_id=1654167379]
+script = ExtResource("1_npjsr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1215105440]
+shape = SubResource("CylinderShape3D_s7md7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=805108200]
+mesh = SubResource("CylinderMesh_s7md7")
